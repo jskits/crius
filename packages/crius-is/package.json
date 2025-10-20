@@ -1,6 +1,6 @@
 {
   "name": "crius-is",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A tool for checking Crius element types",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/jskits/crius#readme",
   "dependencies": {
-    "crius": "^1.3.0"
+    "crius": "^1.4.0"
   },
   "author": "unadlib",
   "license": "MIT"
