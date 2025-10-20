@@ -6,7 +6,10 @@ export interface BaseContext<P = {}, C = {}> extends Hooks<P, C> {
   example?: any;
 }
 
-export class Step<P = {}, C = {}> extends BaseStep<P, C & BaseContext<P, C>> {
+export abstract class Step<P = {}, C = {}> extends BaseStep<
+  P,
+  C & BaseContext<P, C>
+> {
   static title?: string;
   static handleParams?(handleParams: any[]): any[];
   static examples?: any[];
@@ -16,7 +19,6 @@ export class Step<P = {}, C = {}> extends BaseStep<P, C & BaseContext<P, C>> {
   static beforeEach?(...args: any[]): void;
   static afterEach?(...args: any[]): void;
   static plugins?: any[];
-  run() {}
 
   get example() {
     return this.context.example;

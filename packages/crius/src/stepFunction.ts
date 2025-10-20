@@ -1,4 +1,4 @@
-import { CriusElement, Props } from "./step";
+import type { CriusElement, Props } from "./step";
 
 /**
  *

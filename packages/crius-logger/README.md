@@ -13,7 +13,6 @@ yarn add -D crius-logger # or npm install -D crius-logger
 
 Visit [https://github.com/unadlib/crius](https://github.com/unadlib/crius) for more documentation.
 
-
 ## Usage
 
 ```js

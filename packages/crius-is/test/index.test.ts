@@ -41,6 +41,11 @@ describe("isCriusStepFunction", () => {
       undefined,
       null,
       {},
+      class Step {
+        get isCriusStep() {
+          return true;
+        }
+      },
     ]) {
       // babel parser ES6+ class to function.
       expect(is.isCriusStepFunction(item)).toBeFalsy();

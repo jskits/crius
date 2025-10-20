@@ -9,6 +9,7 @@ import {
   Then,
   plugins,
 } from "crius-test";
+
 import logger from "../";
 
 @plugins([logger({ path: "packages/crius-logger" })])
@@ -29,37 +30,93 @@ class Test extends Step<{}, { __logger: object[] }> {
         )
       )
     ).toEqual([
-      { key: "Test", type: "step", status: "start" },
+      {
+        key: "Test",
+        type: "step",
+        status: "start",
+      },
       {
         key: "Scenario",
         desc: "user enter entrypoint",
         type: "builder",
         status: "start",
       },
-      { key: "ActionWithExample", type: "step", status: "start" },
-      { key: "EntryPoint", type: "step", status: "start" },
-      { key: "Prepare", type: "step", status: "start" },
-      { key: "Prepare", type: "step", status: "end" },
-      { key: "Entry", type: "step", status: "start" },
-      { key: "Entry", type: "step", status: "end" },
-      { key: "UT", type: "step", status: "start" },
-      { key: "UT", type: "step", status: "end" },
-      { key: "IT", type: "step", status: "start" },
-      { key: "IT", type: "step", status: "end" },
-      { key: "Login", type: "step", status: "start" },
-      { key: "Login", type: "step", status: "end" },
-      { key: "EntryPoint", type: "step", status: "end" },
-      { key: "ActionWithExample", type: "step", status: "end" },
+      {
+        key: "EntryPoint",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "Prepare",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "Prepare",
+        type: "step",
+        status: "end",
+      },
+      {
+        key: "Entry",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "Entry",
+        type: "step",
+        status: "end",
+      },
+      {
+        key: "UT",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "UT",
+        type: "step",
+        status: "end",
+      },
+      {
+        key: "IT",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "IT",
+        type: "step",
+        status: "end",
+      },
+      {
+        key: "Login",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "Login",
+        type: "step",
+        status: "end",
+      },
+      {
+        key: "EntryPoint",
+        type: "step",
+        status: "end",
+      },
       {
         key: "Given",
         desc: "user navigate to compose text page",
         type: "builder",
         status: "start",
       },
-      { key: "ActionWithExample", type: "step", status: "start" },
-      { key: "NavigateToComposeText", type: "step", status: "start" },
-      { key: "NavigateToComposeText", type: "step", status: "end" },
-      { key: "ActionWithExample", type: "step", status: "end" },
+      {
+        key: "NavigateToComposeText",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "NavigateToComposeText",
+        type: "step",
+        status: "end",
+      },
       {
         key: "Given",
         desc: "user navigate to compose text page",
@@ -72,10 +129,16 @@ class Test extends Step<{}, { __logger: object[] }> {
         type: "builder",
         status: "start",
       },
-      { key: "ActionWithExample", type: "step", status: "start" },
-      { key: "TextSmsMessage", type: "step", status: "start" },
-      { key: "TextSmsMessage", type: "step", status: "end" },
-      { key: "ActionWithExample", type: "step", status: "end" },
+      {
+        key: "TextSmsMessage",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "TextSmsMessage",
+        type: "step",
+        status: "end",
+      },
       {
         key: "When",
         desc: "user type aaa in input field",
@@ -88,10 +151,16 @@ class Test extends Step<{}, { __logger: object[] }> {
         type: "builder",
         status: "start",
       },
-      { key: "ActionWithExample", type: "step", status: "start" },
-      { key: "CheckSmsMessage", type: "step", status: "start" },
-      { key: "CheckSmsMessage", type: "step", status: "end" },
-      { key: "ActionWithExample", type: "step", status: "end" },
+      {
+        key: "CheckSmsMessage",
+        type: "step",
+        status: "start",
+      },
+      {
+        key: "CheckSmsMessage",
+        type: "step",
+        status: "end",
+      },
       {
         key: "Then",
         desc: "user should see that input field text is aaa",
@@ -107,10 +176,10 @@ class Test extends Step<{}, { __logger: object[] }> {
     ]);
   }
 
-  @examples`
+  @(examples`
     | accountTag     | contactType   | smsMessage   |
     | 'us'           | 'personal'    | 'aaa'        |
-  `
+  `)
   run() {
     return (
       <Scenario desc="user enter entrypoint" action={EntryPoint}>

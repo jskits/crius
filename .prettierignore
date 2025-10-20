@@ -1,0 +1,11 @@
+node_modules
+dist
+lib
+build
+coverage
+*.min.js
+package-lock.json
+yarn.lock
+lerna.json
+.git
+

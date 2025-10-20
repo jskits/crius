@@ -1,3 +1,3 @@
-import logger from './src';
+import logger from "./src";
 
 export default logger;

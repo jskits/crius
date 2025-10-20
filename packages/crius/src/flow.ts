@@ -25,7 +25,7 @@ const checkStepClass = <P, C>(
   if (typeof step !== "function") {
     return false;
   }
-  return step.prototype && !!step.prototype?.isCriusStep;
+  return !!step.prototype?.isCriusStep;
 };
 
 function createFlow<P extends {}, C extends {}>(
@@ -37,10 +37,12 @@ function createFlow<P extends {}, C extends {}>(
   let key = "";
   if (typeof step === "function") {
     if (checkStepClass(step)) {
-      key = step.name || step.prototype?.constructor.name;
-      defaultProps = step.prototype?.defaultProps;
+      key = step.name || step.prototype.constructor.name;
+      defaultProps = step.prototype.defaultProps;
     } else {
-      key = (step.name || step.prototype?.constructor.name) ?? "anonymous";
+      key =
+        step.name ||
+        (step.prototype ? step.prototype.constructor.name : "anonymous");
       defaultProps = Object.getOwnPropertyDescriptor(
         step,
         "defaultProps"

@@ -73,12 +73,6 @@ class SendSMS1 extends Step {
       "plugins beforeEach",
       "Scenario",
       "plugins beforeEach",
-      "ActionWithExample",
-      "beforeEach",
-      "ActionWithExample",
-      "plugins beforeEach",
-      "ActionWithExample",
-      "plugins beforeEach",
       "EntryPoint",
       "beforeEach",
       "EntryPoint",
@@ -157,23 +151,11 @@ class SendSMS1 extends Step {
       "plugins afterEach",
       "EntryPoint",
       "afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
-      "afterEach",
       "Given",
       "beforeEach",
       "Given",
       "plugins beforeEach",
       "Given",
-      "plugins beforeEach",
-      "ActionWithExample",
-      "beforeEach",
-      "ActionWithExample",
-      "plugins beforeEach",
-      "ActionWithExample",
       "plugins beforeEach",
       "NavigateToComposeText",
       "beforeEach",
@@ -186,12 +168,6 @@ class SendSMS1 extends Step {
       "NavigateToComposeText",
       "plugins afterEach",
       "NavigateToComposeText",
-      "afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
       "afterEach",
       "Given",
       "plugins afterEach",
@@ -204,12 +180,6 @@ class SendSMS1 extends Step {
       "When",
       "plugins beforeEach",
       "When",
-      "plugins beforeEach",
-      "ActionWithExample",
-      "beforeEach",
-      "ActionWithExample",
-      "plugins beforeEach",
-      "ActionWithExample",
       "plugins beforeEach",
       "TextSmsMessage",
       "beforeEach",
@@ -223,12 +193,6 @@ class SendSMS1 extends Step {
       "TextSmsMessage",
       "plugins afterEach",
       "TextSmsMessage",
-      "afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
-      "plugins afterEach",
-      "ActionWithExample",
       "afterEach",
       "When",
       "plugins afterEach",
@@ -270,11 +234,11 @@ class SendSMS1 extends Step {
     ]);
   }
 
-  @examples`
+  @(examples`
     | accountTag     | contactType   | smsMessage |
     | 'us'           | 'personal'    | 'aaa'      |
     | 'us_1'         | 'personal_1'  | 'aaa_1'    |
-  `
+  `)
   run() {
     return (
       <Scenario desc="user enter entrypoint" action={EntryPoint}>
@@ -352,10 +316,10 @@ const Login: StepFunction = (props, context) => {
 @autorun(test)
 @title("run pure AC text")
 class Test extends Step {
-  @examples`
+  @(examples`
     | smsMessage |
     | 'testFoo'  |
-  `
+  `)
   run() {
     return (
       <Scenario desc="user enter entrypoint">
@@ -378,10 +342,10 @@ autorun(test)(() => (
 @autorun(test)
 @title("run pure AC text")
 class TestSkip extends Step {
-  @examples`
+  @(examples`
     | smsMessage |
     | 'testFoo'  |
-  `
+  `)
   run() {
     return (
       <Scenario desc="user enter entrypoint">
@@ -421,10 +385,10 @@ const A1 = () => {
 @autorun(test)
 @title("test action with flow")
 class TestWithFlow extends Step {
-  @examples`
+  @(examples`
     | smsMessage   |
     | 777          |
-  `
+  `)
   run() {
     return (
       <Scenario
@@ -483,61 +447,19 @@ const Foo: StepFunction<{ s: string }, { inputText: string }> = (
   //
 };
 
-@autorun(test.skip)
+@autorun(test)
 @title("run pure AC text")
 class Test1 extends Step {
-  @examples`
+  @(examples`
     | smsMessage |
     | 'testFoo'  |
-  `
+  `)
   run() {
     return (
       <Scenario desc="user enter entrypoint">
         <Given desc="user navigate to compose text page" />
         <When desc="user type ${smsMessage} in input field" />
         <Then desc="user should see that input field text is ${smsMessage}" />
-      </Scenario>
-    );
-  }
-}
-
-@autorun(test)
-@title("run test Action with example as props")
-class TestWithExample extends Step {
-  @examples`
-    | smsMessage |
-    | 'testFoo'  |
-  `
-  run() {
-    const Fn0 = jest.fn();
-    const Fn1 = jest.fn();
-    const Fn2 = jest.fn();
-    return (
-      <Scenario desc="user enter entrypoint">
-        <Given
-          desc="user navigate to compose text page"
-          action={[Fn0, <Fn1 />]}
-        />
-        <When desc="user type ${smsMessage} in input field" action={Fn2} />
-        <Then
-          desc="user should see that input field text is ${smsMessage}"
-          action={() => {
-            expect(Fn0).toBeCalledTimes(1);
-            expect(Fn0.mock.calls[0][0]).toEqual({
-              children: [],
-              smsMessage: "testFoo",
-            });
-            expect(Fn1).toBeCalledTimes(1);
-            expect(Fn1.mock.calls[0][0]).toEqual({
-              children: [],
-            });
-            expect(Fn2).toBeCalledTimes(1);
-            expect(Fn2.mock.calls[0][0]).toEqual({
-              children: [],
-              smsMessage: "testFoo",
-            });
-          }}
-        />
       </Scenario>
     );
   }

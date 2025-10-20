@@ -1,14 +1,6 @@
-export {
-  StepType
-} from 'crius';
+export { StepType } from "crius";
 
-export {
-  Scenario,
-  Given,
-  When,
-  Then,
-  And
-} from './builder';
+export { Scenario, Given, When, Then, And } from "./builder";
 
 export {
   autorun,
@@ -19,14 +11,8 @@ export {
   plugins,
   Plugins,
   params,
-} from './decorators';
+} from "./decorators";
 
-export {
-  Step,
-  StepFunction,
-  BaseContext,
-} from './step';
+export { Step, StepFunction, BaseContext } from "./step";
 
-export {
-  compileString,
-} from './utils';
+export { compileString } from "./utils";

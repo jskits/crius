@@ -13,8 +13,8 @@ export {
   afterEach,
   plugins,
   Plugins,
-  params,  
+  params,
   compileString,
   BaseContext,
   StepType,
-} from './src';
+} from "./src";

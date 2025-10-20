@@ -19,7 +19,10 @@ interface Step<P = {}> {
  *
  */
 abstract class Step<P = {}, C = {}> {
-  constructor(public props: Props<P>, public context: C) {}
+  constructor(
+    public props: Props<P>,
+    public context: C
+  ) {}
 
   /**
    *

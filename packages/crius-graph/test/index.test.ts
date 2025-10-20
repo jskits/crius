@@ -1,12 +1,9 @@
-import { graphParser } from '../src';
-import SendSMS from './log/SendSMS';
-import SelectReceiver from './log/SelectReceiver';
+import { graphParser } from "../src";
+import SendSMS from "./log/SendSMS";
+import SelectReceiver from "./log/SelectReceiver";
 
-test('', () => {
-  expect(graphParser([
-    SendSMS,
-    SelectReceiver,
-  ])).toEqual(`
+test("", () => {
+  expect(graphParser([SendSMS, SelectReceiver])).toEqual(`
     digraph AC {
       subgraph cluster_SendSMS {
         label = "AC SendSMS";

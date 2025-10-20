@@ -1,3 +1,1 @@
-export {
-  graphParser
-} from './src';
+export { graphParser } from "./src";

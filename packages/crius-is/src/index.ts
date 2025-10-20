@@ -5,7 +5,7 @@ const isCriusStepClass = (target: any): target is StepClass => {
 };
 
 const isCriusStepFunction = (target: any): target is StepFunction => {
-  return !!(typeof target === "function" && !target.isCriusStep);
+  return !!(typeof target === "function" && !target.prototype?.isCriusStep);
 };
 
 const isCriusStepFragment = (target: any): target is Children => {

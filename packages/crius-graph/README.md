@@ -1,5 +1,6 @@
 # crius-graph
-A crius graph tool 
+
+A crius graph tool
 
 ![Node CI](https://github.com/unadlib/crius/workflows/Node%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/crius-graph.svg)](https://www.npmjs.com/package/crius-graph)

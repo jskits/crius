@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import { CriusNode, Children, StepFunction, CriusElement } from "crius";
 import {
   isCriusNode,
@@ -5,8 +6,9 @@ import {
   isCriusStepClass,
   isCriusStepFunction,
 } from "crius-is";
-import { runWithLifecycle } from "./lifecycle";
+
 import { handleContext } from "./context";
+import { runWithLifecycle } from "./lifecycle";
 
 async function iterateChildren<C>(
   children: Children,
@@ -22,8 +24,15 @@ async function iterateChildren<C>(
       await run(child as CriusNode, context);
     } else if (Array.isArray(child)) {
       await iterateChildren(child, context);
-    } else {
-      throw new Error("Unexpected Error Crius Step Type.");
+    } else if (typeof child !== "undefined") {
+      console.warn(
+        `Unexpected Error Crius Step Type: ${child} in ${children.map(
+          (i) => i?.key
+        )}.`
+      );
+      // throw new Error(
+      //   `Unexpected Error Crius Step Type: ${child} in ${children}.`,
+      // );
     }
   }
 }
@@ -31,7 +40,7 @@ async function iterateChildren<C>(
 /**
  * Run A CriusNode
   Run flow with Crius Fragment.
-  For example: 
+  For example:
   <>
     <Bar bar='bar' />
     <FooBar fooBar='fooBar' />
@@ -55,7 +64,7 @@ async function iterateChildren<C>(
     }
     step: undefined
   }
- * @param CriusNode 
+ * @param CriusNode
  */
 async function run<P = {}, C = {}>(
   {

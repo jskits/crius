@@ -3208,6 +3208,42 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
+crius-is@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/crius-is/-/crius-is-1.3.0.tgz#cad8142ea5fb5e2a86dc116fff8bc21e88405143"
+  integrity sha512-sHjon7Z+nCwrIlgAcN6Ys0RqvvtWTO9AdyV9NalLTvfRkj28lr7sVPQ9RM/bB5VAlt88kjNknbnimuzVTWb5eA==
+  dependencies:
+    crius "^1.3.0"
+
+crius-logger@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/crius-logger/-/crius-logger-1.3.0.tgz#0e017a0b61c487e7ef6690c7c24a70ceb5827e1d"
+  integrity sha512-UJNdEbRHMWVD02BIxV7qBlgEfRF8nzxbdGxSHjgqiXKVhtg4mjip/4qAcgNvLGUgUnDBcNnTaG5qZaLV16DnvQ==
+  dependencies:
+    crius-test "^1.3.0"
+
+crius-runner@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/crius-runner/-/crius-runner-1.3.0.tgz#cf6326f1417c2256ed2ae5daf4aa9fe6bb48bf38"
+  integrity sha512-r8GqNqQ74rUpngpHH2xlK7PbLF/hG8eGVWR34FjA3lCVhtCtR5U9Ifi1cj5iE9Xuork7wRAqfp40nMiHi3MzUQ==
+  dependencies:
+    crius "^1.3.0"
+    crius-is "^1.3.0"
+
+crius-test@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/crius-test/-/crius-test-1.3.0.tgz#0b9a398591be2609fcff1ebb5daf3237fcc19f13"
+  integrity sha512-k3EqvMKYFqK+mV8HY3oy/g+hT4zGoU1wscgACbls1R7h1NPxfk3rDcmnm9d6ZG9JaKsFCrHdYdKUbUeXnKZgMg==
+  dependencies:
+    crius "^1.3.0"
+    crius-is "^1.3.0"
+    crius-runner "^1.3.0"
+
+crius@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/crius/-/crius-1.3.0.tgz#50a88365f16c650f9ca07c13d961713941fd0aa2"
+  integrity sha512-VguAHkXscogVQhzJqIgdLBGjj2oaoBpcupUYLC+NwGexj2azLd/KtQmebHs5I8I887HLJW6JMILUtAJyW5qKTQ==
+
 cross-env@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
@@ -6064,6 +6100,11 @@ portfinder@^1.0.25:
     async "^2.6.2"
     debug "^3.1.1"
     mkdirp "^0.5.5"
+
+prettier@^3.6.2:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.6.2.tgz#ccda02a1003ebbb2bfda6f83a074978f608b9393"
+  integrity sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==
 
 pretty-format@^27.0.0, pretty-format@^27.5.1:
   version "27.5.1"
