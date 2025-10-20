@@ -1,6 +1,6 @@
 # crius-is
 
-![Node CI](https://github.com/unadlib/crius/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/jskits/crius/workflows/Node%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/crius-is.svg)](https://www.npmjs.com/package/crius-is)
 
 A tool for checking Crius element types
@@ -11,4 +11,4 @@ A tool for checking Crius element types
 yarn add -D crius-is # or npm install -D crius-is
 ```
 
-Visit [https://github.com/unadlib/crius](https://github.com/unadlib/crius) for more documentation.
+Visit [https://github.com/jskits/crius](https://github.com/jskits/crius) for more documentation.

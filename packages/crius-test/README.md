@@ -1,6 +1,6 @@
 # crius-test
 
-![Node CI](https://github.com/unadlib/crius/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/jskits/crius/workflows/Node%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/crius-test.svg)](https://www.npmjs.com/package/crius-test)
 
 A new generation testing tools for BDD
@@ -11,4 +11,4 @@ A new generation testing tools for BDD
 yarn add -D crius-test # or npm install -D crius-test
 ```
 
-Visit [https://github.com/unadlib/crius](https://github.com/unadlib/crius) for more documentation.
+Visit [https://github.com/jskits/crius](https://github.com/jskits/crius) for more documentation.

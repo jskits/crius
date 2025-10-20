@@ -1,6 +1,6 @@
 # crius
 
-![Node CI](https://github.com/unadlib/crius/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/jskits/crius/workflows/Node%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/crius.svg)](https://www.npmjs.com/package/crius)
 
 A testing tool for behavior-driven development, inspired by [Cucumber](https://github.com/cucumber/cucumber) and [React](https://github.com/facebook/react).
@@ -122,8 +122,8 @@ If you use `@babel/preset-typescript`, you should enable `isTSX: true`, and set 
 
 ## Examples
 
-[Using `crius-test` for initialized the project with `create-react-app`](https://github.com/unadlib/crius-react-example)
-[Crius Examples](https://github.com/unadlib/crius-examples)
+[Using `crius-test` for initialized the project with `create-react-app`](https://github.com/jskits/crius-react-example)
+[Crius Examples](https://github.com/jskits/crius-examples)
 
 ## APIs
 

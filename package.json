@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unadlib/crius.git"
+    "url": "git+https://github.com/jskits/crius.git"
   },
   "author": "unadlib",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/unadlib/crius/issues"
+    "url": "https://github.com/jskits/crius/issues"
   },
-  "homepage": "https://github.com/unadlib/crius#readme",
+  "homepage": "https://github.com/jskits/crius#readme",
   "devDependencies": {
     "@babel/cli": "^7.28.3",
     "@babel/core": "^7.28.4",
