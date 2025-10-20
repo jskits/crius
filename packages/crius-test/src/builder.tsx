@@ -14,7 +14,7 @@ interface BuilderProps {
 
 class Builder<P = {}, C = {}> extends Step<P & BuilderProps, C> {
   constructor(props: P & BuilderProps, context: C) {
-    super(props, context);
+    super(props, context!);
     if (
       typeof this.props.desc === "string" &&
       typeof this.context.example === "object"

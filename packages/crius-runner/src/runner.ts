@@ -18,10 +18,10 @@ async function iterateChildren<C>(
     if (isCriusStepFunction(child)) {
       const result = await child({}, context!);
       if (isCriusNode(result)) {
-        await run(result as CriusNode, context);
+        await run(result as CriusNode, context!);
       }
     } else if (isCriusNode(child)) {
-      await run(child as CriusNode, context);
+      await run(child as CriusNode, context!);
     } else if (Array.isArray(child)) {
       await iterateChildren(child, context);
     } else if (typeof child !== "undefined") {
@@ -74,7 +74,7 @@ async function run<P = {}, C = {}>(
   }: CriusNode<P, C>,
   _context?: C
 ) {
-  const context = handleContext(_context);
+  const context = handleContext(_context!);
   if (isCriusStep(Step)) {
     let nextStep: CriusElement;
     let afterLifecycleAction;

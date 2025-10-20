@@ -9,14 +9,14 @@
   "author": "unadlib",
   "license": "MIT",
   "dependencies": {
-    "@babel/helper-plugin-utils": "^7.0.0",
-    "@babel/plugin-transform-react-display-name": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/plugin-transform-react-jsx-self": "^7.2.0",
-    "@babel/plugin-transform-react-jsx-source": "^7.5.0"
+    "@babel/helper-plugin-utils": "^7.27.1",
+    "@babel/plugin-transform-react-display-name": "^7.28.0",
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/plugin-transform-react-jsx-self": "^7.27.1",
+    "@babel/plugin-transform-react-jsx-source": "^7.27.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5"
+    "@babel/core": "^7.28.4"
   },
   "peerDependencies": {
     "@babel/core": "^7.5.5"

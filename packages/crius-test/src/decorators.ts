@@ -1,4 +1,4 @@
-import { Props, StepType } from "crius";
+import { Props, StepClass, StepType } from "crius";
 import { isCriusNode } from "crius-is";
 import { run, Context } from "crius-runner";
 
@@ -65,7 +65,10 @@ function autorun(_test: Function) {
           {
             key: target.name,
             props: { children: [] },
-            step: target,
+            step: target as unknown as StepClass<
+              Props<unknown>,
+              BaseContext<{}, {}>
+            >,
           },
           baseContext
         );
