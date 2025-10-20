@@ -8,6 +8,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jskits/crius.git",
+    "directory": "packages/crius"
+  },
+  "homepage": "https://github.com/jskits/crius#readme",
   "keywords": [
     "step",
     "processes"

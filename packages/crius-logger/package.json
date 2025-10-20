@@ -10,10 +10,13 @@
   },
   "author": "unadlib",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jskits/crius.git",
+    "directory": "packages/crius-logger"
+  },
+  "homepage": "https://github.com/jskits/crius#readme",
   "dependencies": {
     "crius-test": "^1.3.0"
-  },
-  "peerDependencies": {
-    "crius-test": "^1.0.0-alpha.1"
   }
 }

@@ -11,9 +11,12 @@
     "crius": "^1.2.0",
     "crius-is": "^1.2.0"
   },
-  "peerDependencies": {
-    "crius": "^1.0.0-alpha.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jskits/crius.git",
+    "directory": "packages/crius-runner"
   },
+  "homepage": "https://github.com/jskits/crius#readme",
   "nx": {
     "tags": [
       "scope:coverage-ignore"
