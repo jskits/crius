@@ -1,6 +1,6 @@
 {
   "name": "crius-runner",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A Crius runner with Crius steps",
   "scripts": {
     "test": "echo \"Error: no test specified\""
@@ -8,8 +8,8 @@
   "author": "unadlib",
   "license": "MIT",
   "dependencies": {
-    "crius": "^1.4.0",
-    "crius-is": "^1.4.0"
+    "crius": "^1.4.1",
+    "crius-is": "^1.4.1"
   },
   "repository": {
     "type": "git",

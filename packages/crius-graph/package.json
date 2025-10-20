@@ -1,6 +1,6 @@
 {
   "name": "crius-graph",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A graph parser for Crius Steps with Graphviz",
   "main": "dist/index.js",
   "module": "dist/index.js",
