@@ -26,10 +26,5 @@
   },
   "peerDependencies": {
     "@babel/core": "^7.5.5"
-  },
-  "nx": {
-    "tags": [
-      "scope:coverage-ignore"
-    ]
   }
 }
