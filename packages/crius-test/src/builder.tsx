@@ -57,14 +57,34 @@ class Builder<P = {}, C = {}> extends Step<P & BuilderProps, C> {
   }
 }
 
-class Scenario<P = {}, C = {}> extends Builder<P, C> {}
+class Scenario<P = {}, C = {}> extends Builder<P, C> {
+  constructor(props: P & BuilderProps, context?: C) {
+    super(props, context!);
+  }
+}
 
-class Given<P = {}, C = {}> extends Builder<P, C> {}
+class Given<P = {}, C = {}> extends Builder<P, C> {
+  constructor(props: P & BuilderProps, context?: C) {
+    super(props, context!);
+  }
+}
 
-class When<P = {}, C = {}> extends Builder<P, C> {}
+class When<P = {}, C = {}> extends Builder<P, C> {
+  constructor(props: P & BuilderProps, context?: C) {
+    super(props, context!);
+  }
+}
 
-class Then<P = {}, C = {}> extends Builder<P, C> {}
+class Then<P = {}, C = {}> extends Builder<P, C> {
+  constructor(props: P & BuilderProps, context?: C) {
+    super(props, context!);
+  }
+}
 
-class And<P = {}, C = {}> extends Builder<P, C> {}
+class And<P = {}, C = {}> extends Builder<P, C> {
+  constructor(props: P & BuilderProps, context?: C) {
+    super(props, context!);
+  }
+}
 
 export { Scenario, Given, When, Then, And };
