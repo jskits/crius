@@ -8,6 +8,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\""
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "unadlib",
   "license": "MIT",
   "dependencies": {

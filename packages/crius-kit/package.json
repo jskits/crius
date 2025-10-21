@@ -1,5 +1,5 @@
 {
-  "name": "crius-test",
+  "name": "crius-kit",
   "version": "1.4.2",
   "description": "A new generation testing tools for BDD",
   "main": "dist/index.js",
@@ -11,25 +11,27 @@
   "engines": {
     "node": ">=16"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "BDD",
     "Behavior-driven development",
     "Testing"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "author": "unadlib",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jskits/crius.git",
-    "directory": "packages/crius-test"
+    "directory": "packages/crius-kit"
   },
   "homepage": "https://github.com/jskits/crius#readme",
   "dependencies": {
-    "crius": "^1.4.2",
     "crius-is": "^1.4.2",
-    "crius-runner": "^1.4.2"
+    "crius-test": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0"
   }
 }

@@ -8,6 +8,9 @@
   },
   "author": "unadlib",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.27.1",
     "@babel/plugin-transform-react-display-name": "^7.28.0",
