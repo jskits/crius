@@ -46,9 +46,11 @@ class Builder<P = {}, C = {}> extends Step<P & BuilderProps, C> {
     if (!isCriusNode(Action)) {
       StepAction = Action! as StepType;
     }
+    // Type assertion to allow StepType as JSX component
+    const StepComponent = StepAction as any;
     return (
       <>
-        {isCriusNode(Action) ? Action : <StepAction />}
+        {isCriusNode(Action) ? Action : <StepComponent />}
         {this.props.children}
       </>
     );
