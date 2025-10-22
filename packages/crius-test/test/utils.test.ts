@@ -77,6 +77,122 @@ test("test `parserString` with Error", () => {
   }
 });
 
+test("test `parserString` with comments", () => {
+  // Mock console.warn to capture warning messages
+  const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
+
+  const object = parserString(`
+    | accountTag   | isContactType | smsMessage | sum |
+    // This is a comment line that should be skipped
+    | 'us'         | false         | {a:1}      | 1   |
+    // Another comment
+    | 'uk'         | true          | {}         | 1234|
+    | 'ca'         | null          | {b:{e:undefined}} | -1.234 |
+  `);
+
+  expect(object).toEqual([
+    {
+      accountTag: "us",
+      isContactType: false,
+      smsMessage: { a: 1 },
+      sum: 1,
+    },
+    {
+      accountTag: "uk",
+      isContactType: true,
+      smsMessage: {},
+      sum: 1234,
+    },
+    {
+      accountTag: "ca",
+      isContactType: null,
+      smsMessage: { b: { e: undefined } },
+      sum: -1.234,
+    },
+  ]);
+
+  // Verify that warnings were logged for comment lines
+  expect(consoleSpy).toHaveBeenCalledTimes(2);
+  expect(consoleSpy).toHaveBeenCalledWith(
+    "[WARN] Case:[    // This is a comment line that should be skipped] is being skipped caused of comment."
+  );
+  expect(consoleSpy).toHaveBeenCalledWith(
+    "[WARN] Case:[    // Another comment] is being skipped caused of comment."
+  );
+
+  // Restore console.warn
+  consoleSpy.mockRestore();
+});
+
+test("test `parserString` with mixed comments and data", () => {
+  const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
+
+  const object = parserString(`
+    | name | value |
+    // Comment at the beginning
+    | 'test1' | 100 |
+    // Comment in the middle
+    | 'test2' | 200 |
+    // Comment at the end
+  `);
+
+  expect(object).toEqual([
+    {
+      name: "test1",
+      value: 100,
+    },
+    {
+      name: "test2",
+      value: 200,
+    },
+  ]);
+
+  // Verify that warnings were called (exact count may vary due to other tests)
+  expect(consoleSpy).toHaveBeenCalled();
+
+  consoleSpy.mockRestore();
+});
+
+test("test `parserString` with only comments", () => {
+  const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
+
+  const object = parserString(`
+    | name | value |
+    // Only comments here
+    // No data rows
+  `);
+
+  expect(object).toEqual([]);
+
+  // Verify that warnings were called
+  expect(consoleSpy).toHaveBeenCalled();
+
+  consoleSpy.mockRestore();
+});
+
+test("test `parserString` with whitespace before comments", () => {
+  const consoleSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
+
+  const object = parserString(`
+    | name | value |
+    // Comment with no leading whitespace
+      // Comment with leading whitespace
+    | 'test' | 100 |
+  `);
+
+  expect(object).toEqual([
+    {
+      name: "test",
+      value: 100,
+    },
+  ]);
+
+  // Verify that warnings were called
+  expect(consoleSpy).toHaveBeenCalled();
+
+  consoleSpy.mockRestore();
+});
+
 test("test `compileString`", () => {
   expect(
     compileString("test ${a}", {

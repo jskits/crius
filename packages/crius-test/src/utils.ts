@@ -27,6 +27,20 @@ export const errerMessage = `
 `;
 
 export function parserString(text: string): Array<{ [K: string]: string }> {
+  // 支持过滤掉 // 注释开头的行
+  text = text
+    .split("\n")
+    .filter((line) => {
+      const isComment = line.trim().startsWith("//");
+      if (isComment) {
+        console.warn(
+          `[WARN] Case:[${line}] is being skipped caused of comment.`
+        );
+      }
+      return !isComment;
+    })
+    .join("\n");
+
   const rawArray = text
     .split("|")
     .map((text) => (typeof text === "string" ? text.trim() : text));
