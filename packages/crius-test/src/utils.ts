@@ -27,7 +27,7 @@ export const errerMessage = `
 `;
 
 export function parserString(text: string): Array<{ [K: string]: string }> {
-  // 支持过滤掉 // 注释开头的行
+  // support to skip lines start with //
   text = text
     .split("\n")
     .filter((line) => {
