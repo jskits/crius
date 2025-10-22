@@ -27,6 +27,20 @@ export const errerMessage = `
 `;
 
 export function parserString(text: string): Array<{ [K: string]: string }> {
+  // support to skip lines start with //
+  text = text
+    .split("\n")
+    .filter((line) => {
+      const isComment = line.trim().startsWith("//");
+      if (isComment) {
+        console.warn(
+          `[WARN] Case:[${line}] is being skipped caused of comment.`
+        );
+      }
+      return !isComment;
+    })
+    .join("\n");
+
   const rawArray = text
     .split("|")
     .map((text) => (typeof text === "string" ? text.trim() : text));
