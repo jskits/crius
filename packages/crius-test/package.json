@@ -1,6 +1,6 @@
 {
   "name": "crius-test",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "A new generation testing tools for BDD",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/jskits/crius#readme",
   "dependencies": {
-    "crius": "^1.6.1",
-    "crius-is": "^1.6.1",
-    "crius-runner": "^1.6.1"
+    "crius": "^1.6.2",
+    "crius-is": "^1.6.2",
+    "crius-runner": "^1.6.2"
   }
 }

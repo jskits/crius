@@ -17,6 +17,12 @@ import { testTypes, type TestType } from './constant';
 
 export { beforeEach, afterEach, BaseContext } from 'crius-test';
 
+// Extend global namespace with custom properties
+declare global {
+  var instance: any;
+  var mockServer: any;
+}
+
 interface BuilderProps {
   desc: string;
   // TODO: fix type for all feature file

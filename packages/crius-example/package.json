@@ -1,6 +1,6 @@
 {
   "name": "crius-example",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "private": true,
   "description": "Just a Crius example with Jest.",
   "main": "index.js",
@@ -16,9 +16,9 @@
   },
   "homepage": "https://github.com/jskits/crius#readme",
   "dependencies": {
-    "crius-graph": "^1.6.1",
-    "crius-logger": "^1.6.1",
-    "crius-test": "^1.6.1"
+    "crius-graph": "^1.6.2",
+    "crius-logger": "^1.6.2",
+    "crius-test": "^1.6.2"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
